@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}"/>
+        <title>insta485</title>
+    </head>
+    <body>
+        <header>
+            <div class="left-side">
+                <a href="/" class="logo"><img src="{{ url_for('static', filename='/images/logo.png') }}" alt="logo"/></a>
+                <div class="vert-bar"></div>
+                <h1 class="title">Insta485</h1>
+            </div>
+            <div class="right-side">
+                <h2><a href="/accounts/login/">login</a></h2>
+            </div>
+        </header>
+        <div class="horizontal-bar"></div>
+        <main>
+            <!-- DO NOT CHANGE THIS (aside from styling) -->
+            <form action="/accounts/?target=/" method="post" enctype="multipart/form-data">
+                <label>Photo</label><input type="file" name="file" required/>
+                <label>Name</label><input type="text" name="fullname" required/>
+                <label>Username</label><input type="text" name="username" required/>
+                <label>Email</label><input type="text" name="email" required/>
+                <label>Password</label><input type="password" name="password" required/>
+                <input type="submit" name="signup" value="sign up"/>
+                <input type="hidden" name="operation" value="create"/>
+            </form>
+            <p>Have an account? <a href="/accounts/login/">Log in</a></p>
+        </main>
+    </body>
+</html>

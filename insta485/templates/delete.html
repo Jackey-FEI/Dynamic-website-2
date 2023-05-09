@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}"/>
+        <title>insta485</title>
+    </head>
+    <body>
+        <header>
+            <div class="left-side">
+                <a href="/" class="logo"><img src="{{ url_for('static', filename='/images/logo.png') }}" alt="logo"/></a>
+                <div class="vert-bar"></div>
+                <h1 class="title">Insta485</h1>
+            </div>
+            <div class="right-side">
+                <h2><a href="/explore/">explore</a></h2>
+                <div class="vert-bar"></div>
+                <h2><a href="/users/{{ logname }}/">{{ logname }}</a></h2>
+            </div>
+        </header>
+        <div class="horizontal-bar"></div>
+        <main>
+            <!-- DO NOT CHANGE THIS -->
+            <p>{{ logname }}</p>
+            <form action="/accounts/?target=/accounts/create" method="post" enctype="multipart/form-data">
+                <input type="submit" name="delete" value="confirm delete account"/>
+                <input type="hidden" name="operation" value="delete"/>
+            </form>
+        </main>
+    </body>
+</html>
